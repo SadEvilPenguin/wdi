@@ -1,0 +1,33 @@
+body{
+    background: #B9D4D6;
+}
+header{
+    background: #59959B;
+    color: #B9D4D6;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.center{
+    margin: 0 auto;
+}
+nav{
+    color: #315053;
+}
+nav a{
+    color: #315053;
+}
+main{
+    color: #315053;
+}
+footer{
+    background: #59959B;
+    color: #ACCBCE;
+    padding-bottom: 10px;
+}
+footer a{
+    color: #ACCBCE;
+    font-size: .8em;
+}
+h2, h3{
+    text-align: center;
+}
