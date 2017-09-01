@@ -15,8 +15,6 @@
     height: 50%;
     width: 50%;
     background: red;
-    border-bottom-left-radius: -50%;
-    border-bottom-right-radius: -50%;
     -webkit-transform: skew(10deg, -30deg);
     -moz-transform: skew(10deg, -30deg);
     -ms-transform: skew(10deg, -30deg);

@@ -1,6 +1,11 @@
 body {
-    padding: 2em;
     background-color: #6D899F;
+    min-height: 100vh;
+    padding: 2em;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 h1,
@@ -16,13 +21,13 @@ header,
 footer {
     background-color: #ffa;
     padding: 5px;
+    flex-grow: 1;
 }
 
 section {
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
-    min-height: 800px;
+    flex-grow: 8;
 }
 
 article {
