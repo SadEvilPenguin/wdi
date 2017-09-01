@@ -1,0 +1,31 @@
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: space-around;
+    background: grey;
+    width: 500px;
+    height: 500px;
+}
+
+div {
+    background: #030333;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+#one {
+    order: 3;
+}
+
+#two {
+    order: 1;
+}
+
+#three {
+    order: 2;
+}
