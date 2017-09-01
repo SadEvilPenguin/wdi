@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Harry Potter's First Year Form</h1>
+    <form class="grumbleForm">
+        <div class="form-horizontal">
+            <fieldset class="form-group">
+                <label for="title" class="control-label col-sm-2">Title:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="text" name="title" id="title" value="Harry Potter and the Sorcerer's Stone">
+                </div>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="authorName" class="control-label col-sm-2">By:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="text" name="authorName" id="authorName" value="J.K. Rowling">
+                </div>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="content" class="control-label col-sm-2">Content:</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" name="content" id="content">
+          Harry Potter's life is miserable. His parents are dead and he's stuck with his heartless relatives, who force him to live in a tiny closet under the stairs. But his fortune changes when he receives a letter that tells him the truth about himself: he's a wizard. A mysterious visitor rescues him from his relatives and takes him to his new home, Hogwarts School of Witchcraft and Wizardry.
+        </textarea>
+                </div>
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label col-sm-2">Photo URL:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="text" name="photoUrl" value="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwj_vL3OianSAhVMKyYKHdZNAPcQjBwIBA&url=http%3A%2F%2Fd.ibtimes.co.uk%2Fen%2Ffull%2F237990%2Fjk-rowling.jpg&psig=AFQjCNEtVFa3Jdr687s4vwNxhxjJVsuywA&ust=1488037417080235">
+                </div>
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="control-label col-sm-2">&nbsp;</label>
+                <div class="col-sm-8">
+                    <button class="btn submit btn-danger">Submit</button>
+                    <button class="btn cancel">Cancel</button>
+                </div>
+            </fieldset>
+        </div>
+    </form>
+</body>
+
+</html>
