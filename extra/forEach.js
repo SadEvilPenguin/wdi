@@ -14,3 +14,8 @@ const logTheNumber = function(number) {
     console.log(number);
 }
 array.forEach(logTheNumber);
+
+//newest syntax
+array.forEach((number) => {
+    console.log(number);
+});
