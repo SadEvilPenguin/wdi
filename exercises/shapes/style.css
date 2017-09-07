@@ -36,3 +36,20 @@
     -o-transform: skew(0deg, 6deg);
     transform: skew(0deg, 6deg);
 }
+
+#circle {
+    height: 600px;
+    width: 600px;
+    background-color: grey;
+    border-radius: 300px;
+    padding: 0;
+}
+
+#circle2 {
+    height: 520px;
+    width: 520px;
+    border: 40px solid #545454;
+    border-radius: 300px;
+    padding: 0;
+    margin: 0;
+}
