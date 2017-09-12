@@ -14,10 +14,14 @@ $(() => {
     //add Home
     $('#addHome').on('click', ($event) => {
         //store last home element from newHomes array into newHome and remove from array
+
+        //can also use pop here that would take the last house off the array. shift takes the first
         let newHome = newHomes.shift();
         //create new row
         let newRow = $("<tr></tr>");
         //append new row with home data
+
+        //This is how I added each section of the house into a new row the commented code below this would also work. The .each is the same as a for each loop
         $.each(newHome, function(key, value) {
             newRow.append(`<td>${value}</td>`);
         });

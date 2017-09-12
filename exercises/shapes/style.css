@@ -1,42 +1,3 @@
-#chevron {
-    position: relative;
-    text-align: center;
-    padding: 12px;
-    margin-bottom: 6px;
-    height: 500px;
-    width: 500px;
-}
-
-#chevron:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 50%;
-    width: 50%;
-    background: red;
-    -webkit-transform: skew(10deg, -30deg);
-    -moz-transform: skew(10deg, -30deg);
-    -ms-transform: skew(10deg, -30deg);
-    -o-transform: skew(10deg, -30deg);
-    transform: skew(10deg, -30deg);
-}
-
-#chevron:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 50%;
-    width: 50%;
-    background: red;
-    -webkit-transform: skew(0deg, 6deg);
-    -moz-transform: skew(0deg, 6deg);
-    -ms-transform: skew(0deg, 6deg);
-    -o-transform: skew(0deg, 6deg);
-    transform: skew(0deg, 6deg);
-}
-
 #circle {
     height: 600px;
     width: 600px;
@@ -46,10 +7,42 @@
 }
 
 #circle2 {
-    height: 520px;
-    width: 520px;
-    border: 40px solid #545454;
+    height: 600px;
+    width: 600px;
+    /* border: 30px solid #545454; */
     border-radius: 300px;
-    padding: 0;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#a {
+    height: 0px;
+    width: 0px;
+    border: 140px solid green;
+    border-top-left-radius: 280px;
+}
+
+#b {
+    height: 0px;
+    width: 0px;
+    border: 140px solid red;
+    border-top-right-radius: 280px;
+}
+
+#c {
+    height: 0px;
+    width: 0px;
+    border: 140px solid yellow;
+    border-bottom-left-radius: 280px;
+}
+
+#d {
+    height: 0px;
+    width: 0px;
+    border: 140px solid blue;
+    border-bottom-right-radius: 280px;
 }
