@@ -4,6 +4,10 @@
     background-color: grey;
     border-radius: 300px;
     padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 #circle2 {
@@ -17,6 +21,32 @@
     justify-content: center;
     align-content: center;
     align-items: center;
+}
+
+#innerCircle {
+    margin: -460px;
+    height: 300px;
+    width: 300px;
+    border-radius: 150px;
+    background: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#verticalLine {
+    height: 600px;
+    width: 10px;
+    background: grey;
+    margin: 300px;
+}
+
+#horizontalLine {
+    height: 10px;
+    width: 600px;
+    background: grey;
+    margin: -600px;
 }
 
 #a {
