@@ -1,4 +1,13 @@
+body {
+    background: #454646;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #circle {
+    margin: 0;
     height: 600px;
     width: 600px;
     background-color: grey;
@@ -6,7 +15,6 @@
     padding: 0;
     display: flex;
     flex-wrap: nowrap;
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -49,30 +57,42 @@
     margin: -600px;
 }
 
+.green {
+    border: 140px solid green;
+}
+
+.red {
+    border: 140px solid red;
+}
+
+.yellow {
+    border: 140px solid yellow;
+}
+
+.blue {
+    border: 140px solid blue;
+}
+
 #a {
     height: 0px;
     width: 0px;
-    border: 140px solid green;
     border-top-left-radius: 280px;
 }
 
 #b {
     height: 0px;
     width: 0px;
-    border: 140px solid red;
     border-top-right-radius: 280px;
 }
 
 #c {
     height: 0px;
     width: 0px;
-    border: 140px solid yellow;
     border-bottom-left-radius: 280px;
 }
 
 #d {
     height: 0px;
     width: 0px;
-    border: 140px solid blue;
     border-bottom-right-radius: 280px;
 }
