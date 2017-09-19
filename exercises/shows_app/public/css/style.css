@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.nav-wrapper {
+    background: grey;
+}
+
+.page-footer {
+    background: grey;
+}
+
+.page-footer .footer-copyright {
+    background: #3F3F3F;
+}
