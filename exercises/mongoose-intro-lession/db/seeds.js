@@ -29,9 +29,9 @@ ProjectModel.remove({}, function(err) {
 });
 
 // Now, we will generate instances of a Student and of their Project.
-const becky = new StudentModel({ name: "Becky" });
-const brandon = new StudentModel({ name: "Brandon" });
-const steve = new StudentModel({ name: "Steve" });
+const becky = new StudentModel({ name: "Becky", age: 19 });
+const brandon = new StudentModel({ name: "Brandon", age: 25 });
+const steve = new StudentModel({ name: "Steve", age: 32 });
 
 const project1 = new ProjectModel({ title: "Project 1!!", unit: "JS" });
 const project2 = new ProjectModel({ title: "Project 2!!", unit: "Express" });

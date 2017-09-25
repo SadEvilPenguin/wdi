@@ -11,8 +11,14 @@ var ProjectSchema = new Schema({
 
 // First, we instantiate a namespace for our Schema constructor defined by mongoose.
 const StudentSchema = new Schema({
-    name: String,
-    age: Number,
+    name: {
+        type: String,
+        required: true
+    },
+    age: {
+        type: Number,
+        required: true
+    },
     projects: [ProjectSchema]
 });
 

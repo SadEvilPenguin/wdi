@@ -9,7 +9,9 @@ router.get('/', (req, res) => {
 
     StudentModel.find({})
         .then((students) => {
-            res.send(students);
+            res.render('students/index', {
+                students: students
+            });
         })
         .catch((err) => {
             res.send(err);
@@ -21,7 +23,9 @@ router.get("/:id", (req, res) => {
 
     StudentModel.findById(studentId)
         .then((student) => {
-            res.send(student);
+            res.render('students/show', {
+                student: student
+            });
         })
         .catch((err) => {
             res.send(err);

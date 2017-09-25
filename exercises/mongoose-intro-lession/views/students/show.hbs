@@ -1,0 +1,10 @@
+<div>
+    <span>Id: {{student.id}}</span>
+    <span>Name: {{student.name}}</span>
+    <span>Age: {{student.age}}</span>
+    <ul>
+    {{#each student.projects}}
+    <li>{{this.title}}: {{this.unit}}</li>
+    {{/each}}
+    </ul>
+</div>

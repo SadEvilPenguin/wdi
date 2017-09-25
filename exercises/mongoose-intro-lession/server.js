@@ -1,9 +1,13 @@
-const express = require('express');
-const mongoose = require('mongoose');
+const express = require('express')
+const mongoose = require('mongoose')
+const hbs = require('hbs')
 
-const app = express();
+
+const app = express()
 
 mongoose.connect('mongodb://localhost/students');
+
+app.set('view engine', 'hbs')
 
 const db = mongoose.connection;
 
