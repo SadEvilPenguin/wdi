@@ -10,6 +10,7 @@
     <hr>
     <a href="/students/{{student._id}}/edit">Edit Student</a>
     <a href="/students">Home</a>
+    <a href="/students/{{student._id}}?_method=DELETE">Delete</a>
     <form action="/students/{{student._id}}?_method=DELETE" method="POST">
     <input type="submit" value="Delete"/>
 </form>

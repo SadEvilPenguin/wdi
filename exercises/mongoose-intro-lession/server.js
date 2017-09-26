@@ -13,7 +13,7 @@ app.set('view engine', 'hbs')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method', { methods: ['POST', 'GET'] }))
 
 const db = mongoose.connection
 
