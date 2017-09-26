@@ -1,11 +1,9 @@
 <h3>Students:</h3>
 <ul>
 {{#each students}}
-<div>
     <li><a href="/students/{{this._id}}">
     <span>{{this.name}}:</span>
     <span>{{this.age}}</span></a></li>
-</div>
 {{/each}}
 </ul>
 <hr><br>

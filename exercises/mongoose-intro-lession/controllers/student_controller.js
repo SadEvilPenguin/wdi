@@ -22,21 +22,6 @@ router.get('/new', (req, res) => {
         //renders view
         res.render('students/new')
     })
-    //Show Route
-router.get("/:id", (req, res) => {
-        const studentId = req.params.id
-
-        //finds the student in the db then sends to views to render or catch error
-        StudentModel.findById(studentId)
-            .then((student) => {
-                res.render('students/show', {
-                    student
-                })
-            })
-            .catch((err) => {
-                res.send(err);
-            })
-    })
     //New Route - adds student to db
 router.post('/', (req, res) => {
         //can pass this variable directly into db as long as we name or inputs properly
@@ -50,7 +35,23 @@ router.post('/', (req, res) => {
                 res.send(err);
             })
     })
-    //Update Route
+    //Show Route
+router.get("/:id", (req, res) => {
+    const studentId = req.params.id
+
+    //finds the student in the db then sends to views to render or catch error
+    StudentModel.findById(studentId)
+        .then((student) => {
+            res.render('students/show', {
+                student
+            })
+        })
+        .catch((err) => {
+            res.send(err);
+        })
+})
+
+//Update Route
 router.get("/:id/edit", (req, res) => {
         //gets student id
         const studentId = req.params.id

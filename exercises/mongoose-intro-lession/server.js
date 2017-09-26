@@ -31,7 +31,9 @@ db.once('open', function() {
 const studentController = require('./controllers/student_controller.js')
 
 app.use('/students', studentController)
-
+app.get('/', (req, res) => {
+    res.redirect('/students')
+})
 
 const port = 3000
 app.listen(port, () => {
