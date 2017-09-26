@@ -81,9 +81,11 @@ router.put('/:id', (req, res) => {
             })
 
     })
-    //Deletes the student
+    //Deletes the student with method override
 router.delete('/:id', (req, res) => {
+    //gets student id
     const studentId = req.params.id
+        //This finds the student in the db and deletes the record then redirects to the index or catches an error
     StudentModel.findByIdAndRemove(studentId)
         .then((student) => {
             res.redirect('/students');
