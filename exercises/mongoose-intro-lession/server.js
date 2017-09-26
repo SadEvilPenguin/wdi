@@ -29,8 +29,10 @@ db.once('open', function() {
 
 
 const studentController = require('./controllers/student_controller.js')
+const projectsController = require('./controllers/projects_controller.js')
 
 app.use('/students', studentController)
+app.use('/students/:studentId/projects', projectsController)
 app.get('/', (req, res) => {
     res.redirect('/students')
 })

@@ -1,0 +1,9 @@
+<h3>{{student.name}}'s Projects</h3>
+<ul>
+    {{#each student.projects}}
+        <li>{{this.title}} - {{this.unit}}</li>
+    {{/each}}
+</ul>
+<hr>
+<a href="/students/{{student._id}}">Return to {{student.name}}'s Profile</a><br>
+<a href="/students">Return to all students</a>
