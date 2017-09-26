@@ -1,10 +1,16 @@
 <div>
-    <span>Id: {{student.id}}</span>
-    <span>Name: {{student.name}}</span>
-    <span>Age: {{student.age}}</span>
+    <h4>Name: {{student.name}}</h4>
+    <p>Age: {{student.age}}</p>
+    <p>Id: {{student.id}}</p>
     <ul>
     {{#each student.projects}}
     <li>{{this.title}}: {{this.unit}}</li>
     {{/each}}
     </ul>
+    <hr>
+    <a href="/students/{{student._id}}/edit">Edit Student</a>
+    <a href="/students">Home</a>
+    <form action="/students/{{student._id}}?_method=DELETE" method="POST">
+    <input type="submit" value="Delete"/>
+</form>
 </div>

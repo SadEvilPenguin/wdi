@@ -29,4 +29,4 @@ const StudentModel = mongoose.model("Student", StudentSchema);
 module.exports = {
     StudentModel: StudentModel,
     ProjectModel: ProjectModel
-};
+}
