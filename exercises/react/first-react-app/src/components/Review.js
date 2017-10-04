@@ -5,8 +5,8 @@ class Review extends Component {
         return (
             <div className="review">
                 <h3>{ this.props.title }</h3>
-                <p>{ this.props.description }</p>
-                <p>By: { this.props.author }</p>
+                <p className="description">{ this.props.description }</p>
+                <p className="author">By: { this.props.author }</p>
             </div>
         )
     }

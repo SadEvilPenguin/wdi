@@ -13,9 +13,14 @@
   border: 1px solid black;
 }
 
-.review h3, .review p {
-  margin: 0px;
+.description {
+ margin-left: 10px;
 }
+
+.author {
+  margin: 5px 0px 5px 40px;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;

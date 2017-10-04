@@ -13,7 +13,8 @@ class Movie extends Component {
                 <p>
                     { this.props.description }
                 </p>
-                <ReviewsList />
+                <h3>Reviews:</h3>
+                <ReviewsList reviews={this.props.reviews}/>
             </div>
         )
     }
