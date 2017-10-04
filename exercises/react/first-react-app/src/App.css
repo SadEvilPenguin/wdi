@@ -1,7 +1,21 @@
-.App {
+/* .App {
   text-align: center;
+} */
+
+.movie {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 5px;
 }
 
+.review {
+  margin: 20px 10px 10px 40px;
+  border: 1px solid black;
+}
+
+.review h3, .review p {
+  margin: 0px;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
