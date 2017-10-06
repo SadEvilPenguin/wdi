@@ -13,15 +13,18 @@ class Shop extends Component {
             {
               productName: 'Hammer',
               description: "It's hammer",
-              price: 12.3
+              price: 12.3,
+              id: 1
             },
             {
               productName: 'Nail',
               description: `It's a nail`,
-              price: 0.12
+              price: 0.12,
+              id: 2
             }
           ],
-          cartList: []
+          cartList: [],
+          id: 3
         }
       }
     addProductToProductList = (newProduct) => {
