@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Product from './Product'
+import AdminForm from './AdminForm'
 
 class AdminView extends Component {
   constructor () {
@@ -33,20 +34,7 @@ class AdminView extends Component {
           }) }
         </div>
         <h2>Create A New Product</h2>
-        <form >
-          <div>
-            <input type="text" placeholder="Name"/>
-          </div>
-          <div>
-            <input type="text" placeholder="Price"/>
-          </div>
-          <div>
-            <input type="text" placeholder="Description"/>
-          </div>
-          <div>
-            <button>Create A Product</button>
-          </div>
-        </form>
+        <AdminForm />
       </div>
     )
   }
