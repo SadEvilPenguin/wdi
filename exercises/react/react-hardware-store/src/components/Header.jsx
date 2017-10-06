@@ -13,6 +13,10 @@ class Header extends Component {
     toggleEditSaleItem = () => {
         this.setState({editSaleItem: !this.state.editSaleItem})
     }
+    handleItemCurrentlyOnSaleChange = (event) => {
+        const itemCurrentlyOnSale = event.target.value;
+        this.setState({itemCurrentlyOnSale});
+      }
 
     render() {
         return (
@@ -21,10 +25,10 @@ class Header extends Component {
                 <p>Currently on Sale: {this.state.itemCurrentlyOnSale}</p>
                 <div>
                     <span>
-                        <button onClick={this.toggleEditSaleItem}>Edit Sale Item</button>
+                        <button onClick={this.toggleEditSaleItem}>{this.state.editSaleItem ? 'Hide' : 'Edit'} Sale Item</button>
                     </span>
                     <div>
-                        {this.state.editSaleItem ? <input type="text" placeholder={this.state.itemCurrentlyOnSale}/> : null}
+                        {this.state.editSaleItem ? <input type="text" onChange={this.handleItemCurrentlyOnSaleChange} placeholder={this.state.itemCurrentlyOnSale}/> : null}
                     </div>
                 </div>
             </div>
