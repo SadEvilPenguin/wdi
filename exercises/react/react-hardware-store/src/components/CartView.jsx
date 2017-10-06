@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
+import Product from './Product.jsx'
 
 class CartView extends Component {
     render() {
         return (
             <div>
-                Cartview
+                <h1>Cart View</h1>
+                <h2>Products</h2>
+                <div>
+                    {this.props.cartList.map((product, index) => {
+                            return (
+                                <div key={index}>
+                                    <Product
+                                        productName={product.productName}
+                                        price={product.price}
+                                        description={product.description}/>
+                                        <button onClick={() => this.props.deleteProductFromCartList(index)}>Delete</button>
+                                </div>
+
+                            )
+                        })}
+                </div>
             </div>
         );
     }

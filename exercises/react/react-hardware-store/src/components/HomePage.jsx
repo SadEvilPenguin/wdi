@@ -7,7 +7,6 @@ class HomePage extends Component {
         return (
             <div>
                 <Header />
-                <hr />
                 <Shop />
 
             </div>
