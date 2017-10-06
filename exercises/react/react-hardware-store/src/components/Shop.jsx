@@ -20,7 +20,8 @@ class Shop extends Component {
               description: 'Itsa nail',
               price: 0.12
             }
-          ]
+          ],
+          cartList: []
         }
       }
     addProductToProductList = (newProduct) => {

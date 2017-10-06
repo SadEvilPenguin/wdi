@@ -5,7 +5,7 @@ class ShopView extends Component {
     render() {
         return (
             <div>
-                <h1>Admin View</h1>
+                <h1>Store View</h1>
                 <h2>Products</h2>
                 <div>
                     {this.props.productList.map((product, index) => {
