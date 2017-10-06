@@ -21,6 +21,19 @@ class AdminView extends Component {
       ]
     }
   }
+addProductToProductList = (newProduct) => {
+    const newProductList = [...this.state.productList]
+    newProductList.push(newProduct)
+    this.setState({productList: newProductList})
+}
+
+deleteProductFromProductList = (index) => {
+    const newProductList = [...this.state.productList]
+    newProductList.splice(index, 1)
+    this.setState({productList: newProductList})
+}
+
+
   render () {
     return (
       <div>
@@ -29,12 +42,12 @@ class AdminView extends Component {
         <div>
           { this.state.productList.map((product, index) => {
             return (
-              <Product key={index} productName={product.productName} price={product.price} description={product.description}/>
+              <Product key={index} index={index} deleteProductFromProductList={this.deleteProductFromProductList} productName={product.productName} price={product.price} description={product.description}/>
             )
           }) }
         </div>
         <h2>Create A New Product</h2>
-        <AdminForm />
+        <AdminForm addProductToProductList={this.addProductToProductList}/>
       </div>
     )
   }

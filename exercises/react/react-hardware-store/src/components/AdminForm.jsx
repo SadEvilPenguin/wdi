@@ -14,6 +14,17 @@ class AdminForm extends Component {
         }
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+        this.props.addProductToProductList(this.state.newForm)
+        const emptyForm = {
+            productName: '',
+            price: '',
+            description: ''
+        }
+        this.setState({newForm: emptyForm})
+    }
+
     handleNewProductChange = (event) => {
         const attributeName = event.target.name;
         const attributeValue = event.target.value;
@@ -33,7 +44,7 @@ class AdminForm extends Component {
                 {/* value is equal to what we want to change in state */}
                 {/* name is equal to the key we want to edit in the object */}
                 {/* onChange is the event listener that updates the state with the user input */}
-                <form >
+                <form onSubmit={this.handleSubmit}>
                     <div>
                         <input
                             onChange={this.handleNewProductChange}
