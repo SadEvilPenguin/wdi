@@ -42,7 +42,10 @@ deleteProductFromProductList = (index) => {
         <div>
           { this.state.productList.map((product, index) => {
             return (
-              <Product key={index} index={index} deleteProductFromProductList={this.deleteProductFromProductList} productName={product.productName} price={product.price} description={product.description}/>
+            <div key={index}>
+              <Product productName={product.productName} price={product.price} description={product.description}/>
+                <button onClick={() => this.deleteProductFromProductList(index)}>Delete</button>
+            </div>
             )
           }) }
         </div>

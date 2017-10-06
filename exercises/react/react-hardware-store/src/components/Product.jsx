@@ -1,16 +1,17 @@
 import React/*, { Component }*/ from "react";
 
 
-const Product = ({ productName, price, description, index, deleteProductFromProductList}) => {
-    const deleteProduct = () => {
-        deleteProductFromProductList(index)
-    }
+const Product = ({ productName, price, description}) => {
+    // const deleteProduct = () => {
+    //     deleteProductFromProductList(index)
+    // }
+
     return (
         <div>
           <h3>{productName}</h3>
           <h4>${price}</h4>
           <p>{description}</p>
-          <button onClick={deleteProduct}>Delete</button>
+          {/* <button onClick={deleteProduct}>Delete</button> */}
         </div>
       )
 }
