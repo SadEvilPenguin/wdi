@@ -12,7 +12,7 @@ class AdminView extends Component {
         <div>
           { this.props.productList.map((product, index) => {
             return (
-            <div key={index}>
+            <div key={product.id}>
               <Product productName={product.productName} price={product.price} description={product.description}/>
                 <button onClick={() => this.props.deleteProductFromProductList(index)}>Delete</button>
             </div>
@@ -20,7 +20,7 @@ class AdminView extends Component {
           }) }
         </div>
         <h2>Create A New Product</h2>
-        <AdminForm addProductToProductList={this.props.addProductToProductList}/>
+        <AdminForm addProductToProductList={this.props.addProductToProductList} idCount={this.props.idCount}/>
       </div>
     )
   }

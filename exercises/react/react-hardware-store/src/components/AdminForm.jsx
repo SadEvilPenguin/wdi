@@ -9,7 +9,8 @@ class AdminForm extends Component {
             newForm: {
                 productName: '',
                 price: '',
-                description: ''
+                description: '',
+                id: ''
             }
         }
     }
@@ -20,7 +21,8 @@ class AdminForm extends Component {
         const emptyForm = {
             productName: '',
             price: '',
-            description: ''
+            description: '',
+            id: ''
         }
         this.setState({newForm: emptyForm})
     }
@@ -32,8 +34,10 @@ class AdminForm extends Component {
         const newForm = {
             ...this.state.newForm
         };
+        const productId = this.props.idCount
         //using brace syntax to select object key
-        newForm[attributeName] = attributeValue;
+        newForm.id = productId
+        newForm[attributeName] = attributeValue
         //Take cloned object and apply ot to exisiting state
         this.setState({newForm})
     };

@@ -24,13 +24,14 @@ class Shop extends Component {
             }
           ],
           cartList: [],
-          id: 3
+          idCount: 3
         }
       }
     addProductToProductList = (newProduct) => {
         const newProductList = [...this.state.productList]
+        const newIdCount = this.state.idCount + 1
         newProductList.push(newProduct)
-        this.setState({productList: newProductList})
+        this.setState({productList: newProductList, idCount: newIdCount})
     }
     
     deleteProductFromProductList = (index) => {
@@ -45,7 +46,16 @@ class Shop extends Component {
 
     addToCart = (index) => {
         const newCartList = [...this.state.cartList]
-        newCartList.push(this.state.productList[index])
+        
+        if(newCartList.includes(this.state.productList[index]) === false) {
+        let product = this.state.productList[index]
+        newCartList.push(product)
+        newCartList[newCartList.indexOf(product)]['qty'] = 1
+        } else {
+            const updateQtyIndex = newCartList.indexOf(this.state.productList[index])
+            newCartList[updateQtyIndex].qty += 1
+        }
+
         this.setState({cartList: newCartList})
     }
 
@@ -64,7 +74,8 @@ class Shop extends Component {
                 <div className="products">
                     {this.state.isAdmin ? <AdminView 
                     productList={this.state.productList} 
-                    addProductToProductList={this.addProductToProductList} 
+                    addProductToProductList={this.addProductToProductList}
+                    idCount={this.state.idCount}
                     deleteProductFromProductList={this.deleteProductFromProductList} 
                     /> : <ShopView productList={this.state.productList} 
                     addToCart={this.addToCart} /> }
