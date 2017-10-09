@@ -48,7 +48,7 @@ class Shop extends Component {
         const newCartList = [...this.state.cartList]
         
         if(newCartList.includes(this.state.productList[index]) === false) {
-        let product = this.state.productList[index]
+        const product = this.state.productList[index]
         newCartList.push(product)
         newCartList[newCartList.indexOf(product)]['qty'] = 1
         } else {
