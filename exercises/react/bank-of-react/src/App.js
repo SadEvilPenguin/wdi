@@ -74,7 +74,7 @@ class App extends Component {
       user={this.state.currentUser}
       mockLogIn={this.mockLogIn}
       {...this.props}/>)
-    const DebitsComponent = () => (<DebitView debits={this.state.debits} />)
+    const DebitsComponent = () => (<DebitView debits={this.state.debits} accountBalance={this.state.accountBalance} />)
 
     return (
       <Router>

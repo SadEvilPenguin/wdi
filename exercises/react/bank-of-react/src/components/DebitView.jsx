@@ -8,6 +8,9 @@ class DebitView extends Component {
             <div>
                 <h2>Debits</h2>
                 <div>
+                    <Link to="/">Home</Link>
+                    <h4>Account: Balance: {this.props.accountBalance.toFixed(2)}</h4>
+
                     <DebitList debits={this.props.debits} />
                 </div>
             </div>
