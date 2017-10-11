@@ -1,21 +1,37 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Home from './components/Home'
+import UserProfile from './components/UserProfile';
 
 class App extends Component {
+  state = {
+      accountBalance: 14568.27,
+      currentUser: {
+        userName: 'bob_loblaw',
+        memberSince: '08/23/99',
+      }
+    }
+  }
+
   render() {
+
+    const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
+    const UserProfileComponent = () => (
+        <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
+    );
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <Router>
+          <Switch>
+            <Route exact path="/" render={HomeComponent}/>
+            <Route exact path="/userProfile" render={UserProfileComponent}/>
+          </Switch>
+        </Router>
     );
   }
+
 }
 
 export default App;
