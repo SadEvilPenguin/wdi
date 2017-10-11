@@ -1,37 +1,103 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import axios from 'axios'
 import Home from './components/Home'
 import UserProfile from './components/UserProfile';
+import LogIn from './components/Login'
+import AccountBalance from './components/AccountBalance'
 
 class App extends Component {
   state = {
-      accountBalance: 14568.27,
-      currentUser: {
-        userName: 'bob_loblaw',
-        memberSince: '08/23/99',
-      }
+    accountBalance: 0,
+    currentUser: {
+      userName: 'bob_loblaw',
+      memberSince: '08/23/99'
+    },
+    debits: [],
+    credits: []
+
+  }
+  mockLogIn = (logInInfo) => {
+    const newUser = {
+      ...this.state.currentUser
     }
+    newUser.userName = logInInfo.userName
+    this.setState({currentUser: newUser})
   }
 
-  render() {
+  getDebits = () => {
+    axios
+      .get("http://localhost:4000/debits")
+      .then((res) => {
+        const debits = res.data;
+        this.setState({debits});
+        const totalDebit = this.state.debits.reduce((acc, debit) => {
+          return acc + debit.amount
+        }, 0)
+        const accountBalance = this.state.accountBalance - totalDebit
+        this.setState({accountBalance});
+      })
+      .catch((error) => {
+        console.error("Error: ", error);
+      });
+  }
 
-    const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
-    const UserProfileComponent = () => (
-        <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
-    );
+  getCredits = () => {
+    axios
+    .get("http://localhost:4000/credits")
+    .then((res) => {
+      const credits = res.data;
+      this.setState({credits});
+      const totalCredit = this.state.credits.reduce((acc, credit) => {
+        return acc + credit.amount
+      }, 0)
+      const accountBalance = this.state.accountBalance + totalCredit
+      this.setState({accountBalance});
+    })
+    .catch((error) => {
+      console.error("Error: ", error);
+    });
+  }
+
+  // getBalance = () => {
+  //   const totalDebit = this.state.debits.reduce((acc, debit) => {
+  //     return acc + debit.amount
+  //   }, 0)
+  //   const totalCredit = this.state.credits.reduce((acc, credit) => {
+  //     return acc + credit.amount
+  //   }, 0)
+  //   const accountBalance = totalCredit - totalDebit
+  //   this.setState({accountBalance})
+  // }
+
+  componentWillMount() {
+    this.getDebits()
+    this.getCredits()
+  }
+  render() {
+    // const HomeComponent = () => (<Home
+    // accountBalance={this.state.accountBalance}/>);
+    const AccountBalanceComponent = () => (<AccountBalance accountBalance={this.state.accountBalance} getBalance={this.getBalance}/>)
+    const UserProfileComponent = () => (<UserProfile
+      userName={this.state.currentUser.userName}
+      memberSince={this.state.currentUser.memberSince}/>);
+    const LogInComponent = () => (<LogIn
+      user={this.state.currentUser}
+      mockLogIn={this.mockLogIn}
+      {...this.props}/>)
 
     return (
-        <Router>
-          <Switch>
-            <Route exact path="/" render={HomeComponent}/>
-            <Route exact path="/userProfile" render={UserProfileComponent}/>
-          </Switch>
-        </Router>
+      <Router>
+        <Switch>
+          <Route exact path="/login" render={LogInComponent}/>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/account" render={AccountBalanceComponent}/>
+          <Route exact path="/userProfile" render={UserProfileComponent}/>
+        </Switch>
+      </Router>
     );
   }
-
 }
 
 export default App;
