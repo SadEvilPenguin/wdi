@@ -60,25 +60,12 @@ class App extends Component {
     });
   }
 
-  // getBalance = () => {
-  //   const totalDebit = this.state.debits.reduce((acc, debit) => {
-  //     return acc + debit.amount
-  //   }, 0)
-  //   const totalCredit = this.state.credits.reduce((acc, credit) => {
-  //     return acc + credit.amount
-  //   }, 0)
-  //   const accountBalance = totalCredit - totalDebit
-  //   this.setState({accountBalance})
-  // }
-
   componentWillMount() {
     this.getDebits()
     this.getCredits()
   }
   render() {
-    // const HomeComponent = () => (<Home
-    // accountBalance={this.state.accountBalance}/>);
-    const AccountBalanceComponent = () => (<AccountBalance accountBalance={this.state.accountBalance} getBalance={this.getBalance}/>)
+    const AccountBalanceComponent = () => (<AccountBalance accountBalance={this.state.accountBalance}/>)
     const UserProfileComponent = () => (<UserProfile
       userName={this.state.currentUser.userName}
       memberSince={this.state.currentUser.memberSince}/>);
