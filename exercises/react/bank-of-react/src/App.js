@@ -6,6 +6,7 @@ import Home from './components/Home'
 import UserProfile from './components/UserProfile';
 import LogIn from './components/Login'
 import AccountBalance from './components/AccountBalance'
+import DebitView from './components/DebitView'
 
 class App extends Component {
   state = {
@@ -73,6 +74,7 @@ class App extends Component {
       user={this.state.currentUser}
       mockLogIn={this.mockLogIn}
       {...this.props}/>)
+    const DebitsComponent = () => (<DebitView debits={this.state.debits} />)
 
     return (
       <Router>
@@ -81,6 +83,7 @@ class App extends Component {
           <Route exact path="/" component={Home}/>
           <Route exact path="/account" render={AccountBalanceComponent}/>
           <Route exact path="/userProfile" render={UserProfileComponent}/>
+          <Route exact path="/debits" render={DebitsComponent} />
         </Switch>
       </Router>
     );
