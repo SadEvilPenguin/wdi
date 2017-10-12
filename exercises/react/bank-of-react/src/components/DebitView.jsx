@@ -11,7 +11,7 @@ class DebitView extends Component {
                 <div>
                     <Link to="/">Home</Link>
                     <h4>Account: Balance: {this.props.accountBalance.toFixed(2)}</h4>
-                    <DebitForm getDebits={this.props.getDebits} />
+                    <DebitForm getDebits={this.props.getDebits}  updateDebits={this.props.updateDebits}/>
                     <DebitList debits={this.props.debits} />
                 </div>
             </div>

@@ -61,10 +61,20 @@ class App extends Component {
     });
   }
 
+  updateDebits = (newDebit) => {
+    console.log(newDebit)
+    const newDebitList = [...this.state.debits]
+    newDebitList.push(newDebit)
+    console.log(newDebitList)
+    this.setState({debits: newDebitList})
+  }
+
   componentWillMount() {
     this.getDebits()
     this.getCredits()
   }
+
+  
   render() {
     const AccountBalanceComponent = () => (<AccountBalance accountBalance={this.state.accountBalance}/>)
     const UserProfileComponent = () => (<UserProfile
@@ -76,7 +86,8 @@ class App extends Component {
       {...this.props}/>)
     const DebitsComponent = () => (<DebitView debits={this.state.debits} 
     accountBalance={this.state.accountBalance} 
-    getDebits={this.getDebits} />)
+    getDebits={this.getDebits}
+    updateDebits={this.updateDebits} />)
 
     return (
       <Router>

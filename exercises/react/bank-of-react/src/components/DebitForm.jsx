@@ -22,16 +22,21 @@ class DebitForm extends Component {
             amount: ''
         }
         const payload = {
+            id: Math.random() * 10000,
             description: this.state.newDebit.description,
             amount: this.state.newDebit.amount,
-            date: new Date()
+            date: String(new Date())
         };
+        this.props.updateDebits(payload)
+        this.setState({newDebit: clearForm})
 
-        axios.post("http://localhost:4000/debits", payload)
-        .then(() => {
-                this.props.getDebits()
-                this.setState({newDebit: clearForm})
-        });
+
+        //Use if I decide to update APi to work with this
+        // axios.post("http://localhost:4000/debits", payload)
+        // .then(() => {
+        //         this.props.getDebits()
+        //         this.setState({newDebit: clearForm})
+        // });
     }
 
     render() {
@@ -42,7 +47,7 @@ class DebitForm extends Component {
                     <label>Description</label>
                     <input type="text" name="description" value={this.state.newDebit.description} onChange={this.handleChange} /><br />
                     <label>Amount</label>
-                    <input type="text" name="amount" value={this.state.newDebit.amount} onChange={this.handleChange}/><br />
+                    <input type="text" name="amount" value={this.state.newDebit.amount} onChange={this.handleChange} /><br />
                     <input type="submit" value="Add Debit"/>
                 </form>
             </div>
