@@ -27,14 +27,14 @@ class DebitForm extends Component {
             amount: this.state.newDebit.amount,
             date: String(new Date())
         };
-        this.props.updateDebits(payload)
-        this.setState({newDebit: clearForm})
+        // this.props.updateDebits(payload)
+        // this.setState({newDebit: clearForm})
 
-        // axios.post("http://localhost:4000/debits/", payload)
-        // .then(() => {
-        //         this.props.getDebits()
-        //         this.setState({newDebit: clearForm})
-        // });
+        axios.post("http://localhost:4000/debits/", payload)
+        .then((res) => {
+                this.props.getDebits()
+                this.setState({newDebit: clearForm})
+        });
     }
 
     render() {

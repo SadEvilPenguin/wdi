@@ -34,7 +34,7 @@ class App extends Component {
         const debits = res.data;
         this.setState({debits});
         const totalDebit = this.state.debits.reduce((acc, debit) => {
-          return acc + debit.amount
+          return acc + Number(debit.amount)
         }, 0)
         const accountBalance = Number(this.state.accountBalance) - Number(totalDebit)
         this.setState({accountBalance});
