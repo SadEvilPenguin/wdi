@@ -62,11 +62,11 @@ class App extends Component {
   }
 
   updateDebits = (newDebit) => {
-    console.log(newDebit)
     const newDebitList = [...this.state.debits]
     newDebitList.push(newDebit)
-    console.log(newDebitList)
     this.setState({debits: newDebitList})
+    const accountBalance = this.state.accountBalance - newDebit.amount
+    this.setState({accountBalance})
   }
 
   componentWillMount() {
@@ -74,7 +74,7 @@ class App extends Component {
     this.getCredits()
   }
 
-  
+
   render() {
     const AccountBalanceComponent = () => (<AccountBalance accountBalance={this.state.accountBalance}/>)
     const UserProfileComponent = () => (<UserProfile
