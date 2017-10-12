@@ -7,7 +7,7 @@ import UserProfile from './components/UserProfile';
 import LogIn from './components/Login'
 import AccountBalance from './components/AccountBalance'
 import DebitView from './components/DebitView'
-
+import CreditView from './components/CreditView'
 class App extends Component {
   state = {
     accountBalance: 0,
@@ -69,6 +69,14 @@ class App extends Component {
     this.setState({accountBalance})
   }
 
+  updateCredits = (newCredit) => {
+    const newCreditList = [...this.state.credits]
+    newCreditList.push(newCredit)
+    this.setState({credits: newCreditList})
+    const accountBalance = Number(this.state.accountBalance) + Number(newCredit.amount)
+    this.setState({accountBalance})
+  }
+
   componentWillMount() {
     this.getDebits()
     this.getCredits()
@@ -89,6 +97,11 @@ class App extends Component {
     getDebits={this.getDebits}
     updateDebits={this.updateDebits} />)
 
+const CreditsComponent = () => (<CreditView credits={this.state.credits} 
+    accountBalance={this.state.accountBalance} 
+    getCredits={this.getCredits}
+    updateCredits={this.updateCredits} />)
+
     return (
       <Router>
         <Switch>
@@ -97,6 +110,7 @@ class App extends Component {
           <Route exact path="/account" render={AccountBalanceComponent}/>
           <Route exact path="/userProfile" render={UserProfileComponent}/>
           <Route exact path="/debits" render={DebitsComponent} />
+          <Route exact path="/credits" render={CreditsComponent} />
         </Switch>
       </Router>
     );
