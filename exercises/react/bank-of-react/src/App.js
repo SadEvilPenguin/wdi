@@ -33,15 +33,11 @@ class App extends Component {
       .then((res) => {
         const debits = res.data;
         this.setState({debits});
-        const totalDebit = this.state.debits.reduce((acc, debit) => {
-          return acc + Number(debit.amount)
-        }, 0)
-        const accountBalance = Number(this.state.accountBalance) - Number(totalDebit)
-        this.setState({accountBalance});
+        this.updateAccountBalance();
       })
       .catch((error) => {
         console.error("Error: ", error);
-      });
+      })
   }
 
   getCredits = () => {
@@ -50,15 +46,24 @@ class App extends Component {
     .then((res) => {
       const credits = res.data;
       this.setState({credits});
-      const totalCredit = this.state.credits.reduce((acc, credit) => {
-        return acc + credit.amount
-      }, 0)
-      const accountBalance = Number(this.state.accountBalance) + Number(totalCredit)
-      this.setState({accountBalance});
+      this.updateAccountBalance();
     })
     .catch((error) => {
       console.error("Error: ", error);
     });
+  }
+
+  updateAccountBalance = () => {
+    const totalDebit = this.state.debits.reduce((acc, debit) => {
+          let amount = Number(debit.amount)
+          return acc + amount
+        }, 0)
+    const totalCredit = this.state.credits.reduce((acc, credit) => {
+        let amount = Number(credit.amount)
+        return acc + amount
+      }, 0)
+      const accountBalance = Number(totalCredit) - Number(totalDebit) 
+      this.setState({accountBalance});
   }
 
   updateDebits = (newDebit) => {

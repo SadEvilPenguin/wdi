@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 class CreditForm extends Component {
     state = {
@@ -26,16 +27,16 @@ class CreditForm extends Component {
             amount: this.state.newCredit.amount,
             date: String(new Date())
         };
-        this.props.updateCredits(payload)
-        this.setState({newCredit: clearForm})
+        // this.props.updateCredits(payload)
+        // this.setState({newCredit: clearForm})
 
 
-        //Use if I decide to update APi to work with this
-        // axios.post("http://localhost:4000/debits", payload)
-        // .then(() => {
-        //         this.props.getDebits()
-        //         this.setState({newDebit: clearForm})
-        // });
+        
+        axios.post("http://localhost:4000/credits", payload)
+        .then(() => {
+                this.props.getCredits()
+                this.setState({newCredit: clearForm})
+        });
     }
     
     render() {
