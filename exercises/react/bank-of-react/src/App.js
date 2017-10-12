@@ -36,7 +36,7 @@ class App extends Component {
         const totalDebit = this.state.debits.reduce((acc, debit) => {
           return acc + debit.amount
         }, 0)
-        const accountBalance = this.state.accountBalance - totalDebit
+        const accountBalance = Number(this.state.accountBalance) - Number(totalDebit)
         this.setState({accountBalance});
       })
       .catch((error) => {
@@ -53,7 +53,7 @@ class App extends Component {
       const totalCredit = this.state.credits.reduce((acc, credit) => {
         return acc + credit.amount
       }, 0)
-      const accountBalance = this.state.accountBalance + totalCredit
+      const accountBalance = Number(this.state.accountBalance) + Number(totalCredit)
       this.setState({accountBalance});
     })
     .catch((error) => {
@@ -65,7 +65,7 @@ class App extends Component {
     const newDebitList = [...this.state.debits]
     newDebitList.push(newDebit)
     this.setState({debits: newDebitList})
-    const accountBalance = this.state.accountBalance - newDebit.amount
+    const accountBalance = Number(this.state.accountBalance) - Number(newDebit.amount)
     this.setState({accountBalance})
   }
 

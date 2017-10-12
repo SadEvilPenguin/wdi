@@ -46,7 +46,7 @@ class CreditForm extends Component {
                     <label>Description</label>
                     <input type="text" name="description" value={this.state.newCredit.description} onChange={this.handleChange} /><br />
                     <label>Amount</label>
-                    <input type="text" name="amount" value={this.state.newCredit.amount} onChange={this.handleChange} /><br />
+                    <input type="number" name="amount" value={this.state.newCredit.amount} onChange={this.handleChange} /><br />
                     <input type="submit" value="Add Credit"/>
                 </form>
             </div>

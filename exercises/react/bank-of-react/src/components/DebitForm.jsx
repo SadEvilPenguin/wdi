@@ -47,7 +47,7 @@ class DebitForm extends Component {
                     <label>Description</label>
                     <input type="text" name="description" value={this.state.newDebit.description} onChange={this.handleChange} /><br />
                     <label>Amount</label>
-                    <input type="text" name="amount" value={this.state.newDebit.amount} onChange={this.handleChange} /><br />
+                    <input type="number" name="amount" value={this.state.newDebit.amount} onChange={this.handleChange} /><br />
                     <input type="submit" value="Add Debit"/>
                 </form>
             </div>
