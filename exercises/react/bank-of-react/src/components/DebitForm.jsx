@@ -30,9 +30,7 @@ class DebitForm extends Component {
         this.props.updateDebits(payload)
         this.setState({newDebit: clearForm})
 
-
-        //Use if I decide to update APi to work with this
-        // axios.post("http://localhost:4000/debits", payload)
+        // axios.post("http://localhost:4000/debits/", payload)
         // .then(() => {
         //         this.props.getDebits()
         //         this.setState({newDebit: clearForm})
