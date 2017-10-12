@@ -27,9 +27,11 @@ class DebitForm extends Component {
             amount: this.state.newDebit.amount,
             date: String(new Date())
         };
+        //---Functionality to push new credit to state instead of the API ---//
         // this.props.updateDebits(payload)
         // this.setState({newDebit: clearForm})
 
+        //---Functionality to push new credit to api data. Had to update api app ---//
         axios.post("http://localhost:4000/debits/", payload)
         .then((res) => {
                 this.props.getDebits()

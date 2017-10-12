@@ -27,11 +27,13 @@ class CreditForm extends Component {
             amount: this.state.newCredit.amount,
             date: String(new Date())
         };
+        
+        //---Functionality to push new credit to state instead of the API ---//
         // this.props.updateCredits(payload)
         // this.setState({newCredit: clearForm})
 
 
-        
+        //---Functionality to push new credit to api data. Had to update api app ---//
         axios.post("http://localhost:4000/credits", payload)
         .then(() => {
                 this.props.getCredits()
