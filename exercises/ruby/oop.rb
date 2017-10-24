@@ -1,36 +1,25 @@
-require "pry"
+require 'pry'
 
+# class to build a user object
 class User
+  attr_accessor :first_name, :last_name, :age, :favorite_color, :full_name
 
-  def initialize
-    puts "I'm a new User"
+  def initialize(firstname:, lastname: 'Potter', age: 20, favorite_color: 'red')
+    @first_name = firstname.capitalize
+    @last_name = lastname.capitalize
+    @age = age
+    @favorite_color = favorite_color
+    @full_name = firstname.capitalize + ' ' + lastname.capitalize
   end
-
-  def set_name_to(some_string)
-    @name = some_string
-  end
-
-  def get_name
-    return @name
-  end
-
-  def greet
-    puts "Hi! My name is #{@name}!"
-  end
-
 end
 
-alice = User.new
-alice.set_name_to("alice")
-puts alice.get_name
+harry = User.new(firstname: 'Harry', lastname: 'Potter')
+puts harry.full_name
+puts harry.first_name
+puts harry.last_name
+puts harry.age
+puts harry.favorite_color
 
-madhatter = User.new
-madhatter.set_name_to("Mad Hatter")
-puts madhatter.get_name
+# binding.pry
 
-alice.greet
-madhatter.greet
-
-binding.pry
-
-puts "end of file"
+puts 'end of file'
